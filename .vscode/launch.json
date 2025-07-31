@@ -1,0 +1,9 @@
+{
+    "version": "0.1.1",
+    "configuration": {
+        "name": "run_fourier_transform",
+        "type": "debugpy",
+        "request": "launch",
+        "justMyCode": true,
+    }
+}
