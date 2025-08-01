@@ -3,6 +3,7 @@
     "configuration": {
         "name": "run_fourier_transform",
         "type": "debugpy",
+        "program": "${workspaceFolder}/sec/main.py",
         "request": "launch",
         "justMyCode": true,
     }

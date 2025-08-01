@@ -1,22 +1,27 @@
 [project]
 name = "eulers_stag_fourier_transform"
 version = "2020.02.20"
-authors = { name = "Heather Tymms", email = "heather.hymms@googlemail.com" },
+authors = [
+    { name = "Heather Tymms", email = "heather.hymms@googlemail.com" },
+    { name = "Jim Collett", email = "jim.collet@herts.ac.uk" },
 ]
+
 readme = { file = "README.md", content-type = "text/markdown" }
 requires-python = ">=3.11"
 dependencies = [
-    "emoji>=2.14",
     "matplotlib>=3.10",
     "numpy>=2.3",
     "pandas>=2.3",
-    "Requests>=2.32",
     "scipy>=1.15",
 ]
 
 [build-system]
 requires = ["setuptools>=70.0", "wheel>=0.43"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["scipy*"]
+exclude = ["docs*", "tests*"]
 
 [tool.ruff]
 line-length = 100
