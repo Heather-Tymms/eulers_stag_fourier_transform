@@ -1,0 +1,233 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{titlesec}
+
+\title{Stag_Model_List}
+\author{Heather Tymms}
+\date{April 2020}
+
+\begin{document}
+
+\section{Introduction}
+This is the list of all mathematical techniques represented on the model:
+\begin{enumerate}
+    \item{Catastrophe}
+    \item{Contour lines}
+    \item{Maxima/Minima (Constrain and not)}
+    \item{Grad/Gradient}
+    \item{Divergence}
+    \item{Curl}
+    \item{Finite Elements}
+    \item{Volume Elements}
+    \item{Jacobian}
+    \item{Topology}
+    \item{Discontinuity}
+    \item{Line Integral}
+    \item{Branching}
+    \item{Fourier Transform}
+\end{enumerate}
+
+In this document, we will describe each of these topics to better understand what can be found on the model.
+
+
+\section{Catastrophe}
+A mathematical catastrophe is where a small change in a variable causes a big change in the function output overall. 
+One example of this is where light travels into a more dense medium and creates a pretty pattern due to a high change in the light direction/speed.
+There are many types of Catastrophe (Cusp/Fold/Butterfly/Swallowtail/Wigwam/Umbilic).
+Catastrophe theory is widely used in the real world. Some social sciences use this theory to describe behaviours that have a high change in their output, like a burst of anger, from a small change in the input, like someone talking.
+
+
+\section{Contour Lines}
+Contour lines are lines in a vector field that represent a certain increase in the gradient. The most popular example of contour lines can be found on maps that represent the height of hills and mountains.
+Contour lines, just like on a map, are lines that show information from an extra dimension. On Euler's stag, we show that each contour line is on the same gradient. The closer the lines, the steeper the gradient in that area.
+
+
+\section{Maxima and Minima}
+Maxima and Minima are turning points on a curve or surface. On the stag, these are shown as maxima (closest  to you) and minima (closest to the wall). 
+There are several types of maxima and minima.
+An Example:
+Let us examine the equation:
+$$ f(x) = 2+x-x^2 $$
+Figure ...... shows the graph. We can see there is a maximum point on this graph. But we can find this point using mathematics.
+The derivative of a function is found when you increase a small step in one direction and we can find out how the other direction moves.
+A given change in x results in a calculable change in y. 
+For a turning point, we want $\frac{dy}{dx} = 0$ because we do not want a change in y for a very small change in x.
+$$ \frac{dy}{dx} = 1 -2x = 0 $$
+$$ x = \frac{1}{2}$$
+By entering this back into the original equation $f(X)$, we shall get what y should be when x is a turning point.
+$$ y = 2+ (\frac{1}{2}) -(\frac{1}{2})^2  = 2+ \frac{1}{4} = 2.25 $$
+So we have found a turning point at the point $(0.5,2.25)$ but we still don't know what kind of turning point it is.
+
+We shall use the second derivative test:
+
+\begin{equation}
+    turning point is : 
+    \left\{
+	\begin{array}{ll}
+		maxima  & \mbox{if } \frac{d^2y}{dx^2} < 0  \\
+		minima & \mbox{if } \frac{d^2y}{dx^2} > 0 \\
+	\end{array}
+\right.
+\end{equation}
+
+So, the example $f(x)$ 
+$$ f''(x) = - 2 \implies f''(x) = -2 < 0 $$
+Hence this turning point is a maximma.
+
+
+\subsection{Local Maxima and Local Minima}
+The local maxima or minima are the highest or lowest point in a given square. This means that the local maxima do not need to the overall biggest value. Look at the belly, the local maxima is the middle of the stomach, but it is not the overall maxima, that are the antlers.
+
+
+\subsection{Constraint Maxima and Constraint Minima}
+A contraint Maxima or contraint minima is for greater than 2 dimensions. It is a maximum oint or minimum point on a surface that is constraint by another piece of information.
+
+An example of this would be to find the local maxima or minima of a surface that is constraint by this line equation:
+Let us define the function to be 
+$$z = f(x,y) = 3x^2 +2y^2 $$
+With the turning point that is on this line:
+$$x +2y -1 =0 $$
+
+To find this turning point, we should use the constraint to define the surface by one variable. We know by rearranging the constraint that $x = 1 - 2y$ so by using this fact, we can substitute this into the original surface equation.
+$$z = f(1-2y,y) = 3(1-2y)^2+2y^2 = 3-12y+14y^2 $$
+
+This means we can now find the turning point in the same way for 2D, finding $\frac{dy}{dx}$ and $\frac{d^2y}{dx}$ 
+$$f'(x) = -12+28y = 0 \implies y = \frac{3}{7}$$
+$$f''(x) = 28 >0 \implies minima $$
+$$ x = 1-2y \implies x = \frac{1}{7} $$
+
+This means that we found that there is a minima at point $(\frac{1}{7}, \frac{3}{7})$ that is on the line $x+2y-1=0$
+
+
+\section{Grad and Gradient}
+The grad is a technique to find the gradient in a vector field. We denote this with the nabla ($\nabla$). A vector space and its gradient expression would look like
+$$ Q = a(x,y,z) \Vec{i} +b(x,y,z)\Vec{j} + c(x,y,z)\Vec{k}$$
+$$ \nabla Q = \frac{d}{dx} a(x,y,z) \Vec{i} + \frac{d}{dy} b(x,y,z)\Vec{j} + \frac{d}{dz} c(x,y,z)\Vec{k}$$
+where a, b and c are functions of x, y and z.
+
+
+\section{Divergence}
+The divergence of a section of the surface is a value that represents how the flow is moving in regards to the formula.
+We find the divergence using this formula:
+$$\phi  = a(x,y,z) \Vec{i} +b(x,y,z)\Vec{j} + c(x,y,z)\Vec{k}$$
+$$ \nabla \cdot \phi = \left(
+\begin{array}{c}
+     \frac{d}{dx}  \\
+     \frac{d}{dy} \\
+     \frac{d}{dz} \\
+\end{array}
+\right) \cdot \left(
+\begin{array}{c}
+     a(x,y,z)  \\
+     b(x,y,z) \\
+     c(x,y,z) \\
+\end{array}
+\right)  = \frac{d}{dx} a(x,y,z) + \frac{d}{dy} b(x,y,z) + \frac{d}{dz} c(x,y,z) $$
+where a, b and c are functions of x, y and z. This result is either a number or an equation but not a vector field.
+The result shows the flow coming into and away from a given point.
+
+ 
+\section{Curl}
+The curl is another vector space operator. This shows how a field flows around a point.
+
+$$\phi  = a(x,y,z) \Vec{i} +b(x,y,z)\Vec{j} + c(x,y,z)\Vec{k}$$
+$$ \nabla \times \phi = \left(
+\begin{array}{c}
+     \frac{d}{dx}  \\
+     \frac{d}{dy} \\
+     \frac{d}{dz} \\
+\end{array}
+\right) \times \left(
+\begin{array}{c}
+     a(x,y,z)  \\
+     b(x,y,z) \\
+     c(x,y,z) \\
+\end{array}
+\right)  = 
+det \left( 
+\begin{array}{ccc}
+     \Vec{i} & \Vec{j} & \vec{k}\\
+     a & b & c \\
+     \frac{d}{dx} & \frac{d}{dy} & \frac{d}{dz} \\
+\end{array}
+\right) $$
+$$ \nabla \times \phi = 
+(\frac{d}{dz} b(x,y,z) - \frac{d}{dy} c(x,y,z)) \vec{i} - (\frac{d}{dz} a(x,y,z) - \frac{d}{dx} c(x,y,z) )\vec{j} + ( \frac{d}{dy} a(x,y,z) - \frac{d}{dx}b(x,y,z)) )\vec{k} $$
+This result comes out to be a vector. This vector shows how the flow is around the given point.
+
+
+\section{Finite Element}
+The finite element method is a method for solving partial differential equations. It has many applications in engineering and mathematics.
+
+
+\section{Volume Element}
+The volume element is 
+$$dV = dx dy = r dr d\theta$$
+
+This is another method that solved differential eqations.
+
+\section{Jacobian}
+The Jacobian is a useful technique needed to adjust a volume element when mapping between two different variables.
+
+The most common one is changing between cartesian and either spherical or cylindrical polar coordinates.
+C - C:
+$$ dY = dx dy dz = r dr d\theta d\phi $$
+C - S:
+$$ dY = dx dy dz = r^2 \sin(\theta) dr d\theta d\phi $$
+
+
+\section{Topology}
+Topology is a topic in mathematics where we describe geometric objects in a general manner. This area generalises objects, not minding about stretching, squishing or crumbling the object. An example of this would be a straw would have the same properties as a doughnut in Topology. Also, a book would have similar properties to a ball.
+
+There are many uses for topology and is still widely researched today. One use is the research in knot theory has helped increase understanding in protein folding for research in Biology and the Covid-19 virus. 
+
+
+\section{Discontinuity}
+Discontinuity is a way to describe 
+
+Let us define a function.
+
+\begin{equation}
+    f(x)=
+    \begin{cases}
+        \frac{x^2-x}{x},& \text{if } x\geq 1\\
+        0,              & x < 1
+    \end{cases}
+\end{equation}
+
+
+In the above equation, we see that when at $x \eq 1$ we can use either and they both will equal 0.
+
+If we take another similar equation 
+\begin{equation}
+    f(x)=
+    \begin{cases}
+        \frac{x^2-x}{x},& \text{if } x\geq 1\\
+        1,              & x < 1
+    \end{cases}
+\end{equation}
+
+Now we see at $ x = 1$ there is a jump between the lines. This is a form of discontinuity.
+
+\section{Line integrals}
+A line integral is where we integrate a function with respect to a curve instead of a simple variable. W use parameterisation to solve these types of problems.
+
+EQUATION
+
+
+\section{Branching}
+Branching is a technique in probability. Take a 
+
+\section{Fourier Transforms}
+Fourier transforms are a way of changing the information that one has into something that is easier to manipulate. Sound analysis uses fourier transforms to transform an air pressure/time wave into a intensity/frequrncy wave. This method uses sinosoidal waves and wraps them around a circle. 
+
+$$ F(k) = \int_{-\infty}^{\infty} f(t) e^{-ikt} dt 
+$$
+
+for more information, see the Fourier Transform code.
+
+\section{Conclusion}
+There are many mathematical techniques on the Euler's stag. For more information, please refer to the audio description of the stag on the website.
+
+\end{document}
